@@ -14,4 +14,11 @@ class FrontEndController extends Controller
     {
         return view('layouts.frontend.home.index');
     }
+    public function account()
+    {
+        return view('layouts.frontend.account.index');
+    }
 }
+
+
+

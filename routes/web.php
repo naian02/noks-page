@@ -22,8 +22,10 @@ use Illuminate\Support\Facades\Session;
 //});
 
 //FrontEnd
-Route::get('/', [FrontEndController::class, 'frontend'])->name('layouts.frontend.frontends');
+Route::get('/', [FrontEndController::class, 'frontend'])->name('layouts.frontend.frontend');
 Route::get('/', [FrontEndController::class, 'home'])->name('layouts.frontend.home.index');
+
+Route::get('/account', [FrontEndController::class, 'account'])->name('layouts.frontend.account.index');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

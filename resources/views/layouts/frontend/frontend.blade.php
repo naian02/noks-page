@@ -29,6 +29,7 @@
             @include('layouts.frontend.common.mainsearch')
 
             @yield('home')
+            @yield('account')
 
             @include('layouts.frontend.common.footer')
         </div>

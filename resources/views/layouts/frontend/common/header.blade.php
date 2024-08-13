@@ -24,16 +24,16 @@
                         </div>
                     </div>
                     <div class="sticky-logo">
-                        <a href="#"><img src="frontend/img/logo/brzl.jpg" alt="" style="width: 80px;"/></a>
+                        <a href="{{ route('layouts.frontend.home.index')}}"><img src="frontend/img/logo/brzl.jpg" alt="" style="width: 80px;"/></a>
                     </div>
                     <div class="logo-small-device">
-                        <a href="#"><img src="frontend/img/logo/brzl.jpg" alt="" style="width: 80px;"></a>
+                        <a href="{{ route('layouts.frontend.home.index')}}"><img src="frontend/img/logo/brzl.jpg" alt="" style="width: 80px;"></a>
                     </div>
                 </div>
                 <div class="col-lg-8 col-md-8 d-none d-md-block">
                     <div class="logo-menu-wrapper text-center">
                         <div class="logo">
-                            <a href="index.html"><img src="frontend/img/logo/brzl.jpg" alt="" style="width: 80px;"/></a>
+                            <a href="{{ route('layouts.frontend.home.index')}}"><img src="frontend/img/logo/brzl.jpg" alt="" style="width: 80px;"/></a>
                         </div>
                         <div class="main-menu">
                             <nav>
@@ -130,7 +130,7 @@
                             </button>
                         </div>
                         <div class="header-login same-style">
-                            <a href="login-register.html">
+                            <a href="{{ route('layouts.frontend.account.index')}}">
                                 <span class="ti-user"></span>
                             </a>
                         </div>
