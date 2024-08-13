@@ -15,30 +15,48 @@
                         <div id="lg1" class="tab-pane active">
                             <div class="login-form-container">
                                 <div class="login-form">
-                                    <form action="#" method="post">
-                                        <input type="text" name="user-name" placeholder="Username">
-                                        <input type="password" name="user-password" placeholder="Password">
+                                    <!--Login-->
+                                    <form action="{{ route('login') }}" method="POST">@csrf
+                                        <input id="email" placeholder="Email" type="email" name="email" :value="old('email')" required autofocus autocomplete="username">
+                                        <x-input-error :messages="$errors->get('email')" class="mt-2" />
+                                        <input id="password" placeholder="Password" class="block mt-1 w-full" type="password" name="password" required autocomplete="current-password">
+                                        <x-input-error :messages="$errors->get('password')" class="mt-2"/>
                                         <div class="button-box">
                                             <div class="login-toggle-btn">
-                                                <input type="checkbox">
-                                                <label>Remember me</label>
-                                                <a href="#">Forgot Password?</a>
+                                                <input id="remember_me" type="checkbox"name="remember">
+                                                <label>{{ __('Remember me') }}</label>
+                                                @if (Route::has('password.request'))
+                                                    <a class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('password.request') }}">
+                                                        {{ __('Forgot your password?') }}
+                                                    </a>
+                                                @endif
                                             </div>
-                                            <button type="submit" class="btn-style cr-btn"><span>Login</span></button>
+                                            <button type="submit" class="btn-style cr-btn"><span>{{ __('Log in') }}</span></button>
                                         </div>
                                     </form>
+                                    <!--Login End-->
                                 </div>
                             </div>
                         </div>
                         <div id="lg2" class="tab-pane">
                             <div class="login-form-container">
                                 <div class="login-form">
-                                    <form action="#" method="post">
-                                        <input type="text" name="user-name" placeholder="Username">
-                                        <input type="password" name="user-password" placeholder="Password">
-                                        <input name="user-email" placeholder="Email" type="email">
+                                    <form action="{{ route('register') }}" method="POST">@csrf
+
+                                        <input id="name" placeholder="name" type="text" name="name" :value="old('name')" required autofocus autocomplete="name">
+                                        <x-input-error :messages="$errors->get('name')" class="mt-2" />
+                                            <input id="email" placeholder="Email" type="email" name="email" :value="old('email')" required autocomplete="username">
+                                        <x-input-error :messages="$errors->get('email')" class="mt-2" />
+
+                                        <input id="password" placeholder="Password" class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password">
+                                        <x-input-error :messages="$errors->get('password')" class="mt-2" />
+
+                                        <input id="password_confirmation" placeholder="Confirm Password" class="block mt-1 w-full" type="password" name="password_confirmation" required autocomplete="new-password">
+                                        <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
+                                            
                                         <div class="button-box">
-                                            <button type="submit" class="btn-style cr-btn"><span>Register</span></button>
+                                            <button type="submit" class="btn-style cr-btn"><span>{{ __('Register') }}</span></button>
+                                        <div class="button-box">
                                         </div>
                                     </form>
                                 </div>
